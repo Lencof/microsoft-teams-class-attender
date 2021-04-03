@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+import sys
 import time
 import re
 import os.path
@@ -34,7 +35,7 @@ URL = "https://teams.microsoft.com"
 CREDS = {'email' : '','passwd':''}
 
 
-
+# create def login():
 def login():
 	global driver
 	#login required
@@ -53,7 +54,7 @@ def login():
 	time.sleep(5)
 	# return driver
 
-
+# create def createDB():
 def createDB():
 	conn = sqlite3.connect('timetable.db')
 	c=conn.cursor()
@@ -262,8 +263,8 @@ if __name__=="__main__":
 	op = int(input(("1. Modify Timetable\n2. View Timetable\n3. Start Bot\nEnter option : ")))
 	
 	if(op==1):
-		add_timetable()
+		add_timetable() # Exit
 	if(op==2):
-		view_timetable()
+		view_timetable() # Exit
 	if(op==3):
-		sched()
+		sched() # Exit
